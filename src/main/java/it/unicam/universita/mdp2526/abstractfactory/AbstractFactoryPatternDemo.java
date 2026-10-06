@@ -4,7 +4,7 @@ public class AbstractFactoryPatternDemo {
 
     public static void main(String[] args) {
         // factory per le forme normali
-        AbstractFactory shapeFactory = FactoryProducer.getFactory(false);
+        AbstractFactory shapeFactory = new ShapeFactory();
 
         Shape shape1 = shapeFactory.getShape("RECTANGLE");
         shape1.draw();
@@ -16,7 +16,7 @@ public class AbstractFactoryPatternDemo {
         shape3.draw();
 
         // factory per le forme arrotondate
-        AbstractFactory roundedShapeFactory = FactoryProducer.getFactory(true);
+        AbstractFactory roundedShapeFactory = new RoundedShapeFactory();
 
         Shape shape4 = roundedShapeFactory.getShape("RECTANGLE");
         shape4.draw();
